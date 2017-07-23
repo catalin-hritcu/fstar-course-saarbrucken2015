@@ -1,0 +1,27 @@
+wlp (Z ::= 0;
+    WHILE (Z+1)*(Z+1) ≤ X DO
+      Z ::= Z+1
+    END inv X=m /\ Z×Z≤m) ( Z×Z≤m /\ m<(Z+1)*(Z+1) )
+
+Use the sequence case of wlp
+- wlp c2 q:
+  wlp (WHILE (Z+1)*(Z+1) ≤ X DO
+      	  Z ::= Z+1
+       END inv X=m /\ Z×Z≤m) ( Z×Z≤m /\ m<(Z+1)*(Z+1) )
+
+  *Apply the while case*
+
+  = (X=m /\ Z×Z≤m) /\ 
+    ((Z+1)*(Z+1) ≤ X ==> wlp (Z ::= Z+1) (X=m ∧ Z×Z≤m)) /\ 
+    (~(Z+1)*(Z+1) ≤ X ==> ( Z×Z≤m /\ m<(Z+1)*(Z+1) )) 
+  = (X=m /\ Z×Z≤m) /\ 
+    ((Z+1)*(Z+1) ≤ X ==> (X=m ∧ (Z+1)×(Z+1)≤m)) /\ 
+    ((Z+1)*(Z+1) > X ==> ( Z×Z≤m /\ m<(Z+1)*(Z+1) ))   
+  = (X=m /\ Z×Z≤m)
+
+- wlp c1 (wlp c2 q):
+  wlp (Z::= 0) (X=m /\ Z×Z≤m)
+  = (X=m /\ Z×Z≤m)[Z->0]
+  = (X=m /\ 0×0≤m)
+
+The wlp for this postcondition is (X=m /\ 0×0≤m).

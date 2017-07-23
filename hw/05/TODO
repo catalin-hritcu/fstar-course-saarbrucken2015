@@ -1,0 +1,6 @@
+Afterthoughts
+- the subtyping exercise seems unnecessarily tricky in this style,
+  so it was a good idea to make it optional
+- for subyping and if-then-else we could compute the join of two types,
+  instead of adding an useless annotation (because of function types
+  we would also need a mutually recursive meet)

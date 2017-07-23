@@ -1,0 +1,19 @@
+TODO:
+- simple state
+  - extend strong reduction STLC or LambdaOmega or both?
+  - probably easy
+- subtyping relation (not function!)
+  - extend strong reduction STLC or LambdaOmega? 
+  - should make sure that it's not too hard! Start with STLC!
+
+MAYBE
+- let rec again?
+  - probably easy
+  - too boring? extend LambdaOmega?
+- dynamically allocated references? (TAPL 13)
+  - as an extension from simple state
+  - not needed for TinyF* though
+
+NO
+- integers: way too boring, we can give it to them for subtyping
+- pairs: boring and useless for tiny F*
